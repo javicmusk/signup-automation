@@ -78,7 +78,7 @@ During the first authorization, Google may ask you to sign in and allow access. 
 
 ## 6. Running the Script
 
-Open the terminal and navigate to the project folder:
+Open the terminal and navigate to the project folder like:
 
 ```powershell
 cd "C:\Users\EXPERTBOOK\OneDrive\Desktop\signup_automation"
