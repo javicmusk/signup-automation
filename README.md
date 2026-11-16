@@ -1,0 +1,137 @@
+# Signup Automation Using Python and Playwright
+
+## 1. About the Project
+
+This project is about automating the signup process of the Authorized Partner website using Python and Playwright.
+
+I created this automation to complete the registration process without having to manually fill in each page or enter the OTP myself.
+
+The script covers the following steps:
+
+- Accepting the terms and conditions
+- Filling in the account details
+- Getting the OTP from Gmail automatically
+- Entering and verifying the OTP
+- Filling in the agency details
+- Completing the professional experience section
+- Filling in the verification and preferences section
+- Uploading the required test documents
+- Submitting the registration form
+
+## 2. Tools and Technologies
+
+I used the following tools for this project:
+
+- **Language:** Python 3.14
+- **Automation Framework:** Playwright 1.65.2
+- **Browser:** Google Chrome 157
+- **Email Integration:** Gmail API
+- **Code Editor:** Visual Studio Code
+
+## 3. Project Structure
+
+Here are the main files and folders used in this project:
+
+- `test_playwright.py` – Main script that runs the signup automation.
+- `test_documents/` – Contains the sample documents used for testing.
+- `.gitignore` – Prevents private files from being uploaded to GitHub.
+- `credentials.json` – Gmail API OAuth credentials.
+- `token.json` – Stores the Gmail API authentication token.
+- `README_execution_steps.md` – Contains the project setup and execution instructions.
+
+The `credentials.json` and `token.json` files are only stored locally and should not be uploaded to GitHub.
+
+## 4. Requirements
+
+Before running the script, make sure you have:
+
+- Python installed
+- Google Chrome installed
+- An internet connection
+- A Gmail account authorized to access the Gmail API
+
+## 5. Installation and Setup
+
+First, open the project folder in VS Code and open the terminal.
+
+Install Playwright using:
+
+```bash
+python -m pip install playwright
+```
+
+Install the Google API packages:
+
+```bash
+python -m pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+```
+
+### Gmail API Setup
+
+I used the Gmail API to automate OTP retrieval instead of entering the OTP manually.
+
+For this, I created a Google Cloud project, enabled the Gmail API, configured OAuth authentication, and downloaded the credentials file.
+
+The downloaded file needs to be placed inside the project folder and named `credentials.json`.
+
+During the first authorization, Google may ask you to sign in and allow access. Once authorized, the script stores the token locally in `token.json`.
+
+## 6. Running the Script
+
+Open the terminal and navigate to the project folder:
+
+```powershell
+cd "C:\Users\EXPERTBOOK\OneDrive\Desktop\signup_automation"
+```
+
+Run the script using:
+
+```powershell
+python test_playwright.py
+```
+
+Chrome will open, and the script will start completing the signup process.
+
+## 7. How OTP Retrieval Works
+
+One of the important parts of this project was automating OTP verification.
+
+I used the Gmail API to check for the new OTP email sent by the website.
+
+The script identifies the newly received email, extracts the six-digit OTP, and enters it into the verification field automatically.
+
+This means I don't have to copy the OTP from my inbox and paste it manually while the script is running.
+
+## 8. Test Data Used
+
+I used sample information for testing the registration process.
+
+Some examples are:
+
+- Agency Name: ABC Education Consultancy
+- Agency Role: Education Consultant
+- Address: Kathmandu, Nepal
+- Preferred Country: Nepal
+- Institution Type: Universities
+- Registration Number: TEST-REG-2026-003
+
+I also created two sample documents for testing the file upload functionality.
+
+A unique email alias and an unused valid phone number should be used when testing a new registration.
+
+## 9. Test Result
+
+I ran the automation script and it successfully completed the signup process.
+
+It filled in the required details, retrieved the OTP from Gmail, submitted the verification code, completed the remaining pages, and uploaded both test documents.
+
+At the end, the website displayed this message:
+
+**"Verification and Preferences Added successfully! Registration completed!"**
+
+## 10. Important Notes
+
+- Keep `credentials.json` and `token.json` private.
+- Do not upload passwords, OTPs, or private account information to GitHub.
+- Use sample data for testing.
+- Make sure the Gmail API has been authorized before running the script.
