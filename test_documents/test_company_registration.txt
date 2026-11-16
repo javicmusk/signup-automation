@@ -1,0 +1,10 @@
+
+FICTIONAL TEST DOCUMENT
+
+Document Type: Company Registration
+Test Reference: TEST-REG-2026-001
+
+This document is created only for testing
+the signup automation workflow.
+
+It is NOT an official registration certificate.

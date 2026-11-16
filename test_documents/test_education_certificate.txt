@@ -1,0 +1,10 @@
+
+FICTIONAL TEST DOCUMENT
+
+Document Type: Educational Certificate
+Test Reference: TEST-EDU-2026-001
+
+This document is created only for testing
+the signup automation workflow.
+
+It is NOT an official educational certificate.
