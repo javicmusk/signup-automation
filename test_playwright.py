@@ -4,15 +4,19 @@ import re
 import time
 import base64
 
+
 from playwright.sync_api import sync_playwright
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 
 
+# Test data
+TEST_EMAIL = "tvrittech+qa005@gmail.com"
+TEST_PASSWORD = "Test@12345"
+TEST_PHONE = "9801011016"
 
 # 1. CONNECT TO GMAIL
-
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 
@@ -167,19 +171,19 @@ with sync_playwright() as p:
     # a fresh email address
     page.get_by_placeholder(
         "Enter Your Email Address"
-    ).fill("tvrittech+qa004@gmail.com")
+    ).fill(TEST_EMAIL)
 
     password_fields = page.locator(
         "input[type='password']"
     )
 
-    password_fields.nth(0).fill("Test@12345")
-    password_fields.nth(1).fill("Test@12345")
+    password_fields.nth(0).fill(TEST_PASSWORD)
+    password_fields.nth(1).fill(TEST_PASSWORD)
 
     # test phone number
     page.get_by_placeholder(
         "00-00000000"
-    ).fill("9801011015")
+    ).fill(TEST_PHONE)
 
     print("Account details filled.")
 
