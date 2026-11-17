@@ -321,7 +321,7 @@ with sync_playwright() as p:
 
     page.get_by_placeholder(
         "Enter your registration number"
-    ).fill("TEST-REG-2026-001")
+    ).fill("TEST-REG-2026-003")
 
     page.locator(
         "button[role='combobox']"
